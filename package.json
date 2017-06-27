@@ -1,5 +1,5 @@
 {
-  "name": "cats and dogs",
+  "name": "cats-and-dogs",
   "version": "1.0.0",
   "description": "just a test for giphy svc",
   "main": "index.js",
@@ -28,6 +28,6 @@
     "babel-preset-stage-1": "^6.1.18",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
-    "react-dom": "^0.14.3",
+    "react-dom": "^0.14.3"
   }
 }
