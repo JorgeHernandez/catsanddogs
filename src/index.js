@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import $ from "jquery";
+import _ from 'lodash';
 
 import PictureList   from './components/picture_list'; 
 import PictureDetail from './components/picture_detail';
+
+import AnimalSelector from './components/animal_selector';
 
 //key for GIPHY API
 const API_KEY = '34f1b6a7a8f34603a25e6016b4b15b1f';
@@ -33,9 +36,14 @@ class App extends Component{
 		});
 	}
 	render(){
+		const giphySearch = _.debounce((term)=>{this.giphySearch(term)},300);
+
 		return (<div>
 			<h1>Cats and a few Dogs</h1>
-			<PictureList pictures={this.state.pictures} />
+			<AnimalSelector onSearchTermChange={giphySearch} />
+			<PictureList 
+				onPictureSelect={selectedPicture => this.setState({selectedPicture})} 
+				pictures={this.state.pictures} />
 		</div>);
 	}
 }
