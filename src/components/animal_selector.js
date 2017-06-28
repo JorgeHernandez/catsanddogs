@@ -17,7 +17,7 @@ class AnimalSelector extends Component {
 		console.clear();
 		console.log(animal);
 		this.setState({animal});
-		//this.props.onSearchTermChange(animal);
+		this.props.onSearchTermChange(animal);
 	}	
 };
 

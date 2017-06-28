@@ -19,13 +19,16 @@ class App extends Component{
 		super(props);
 		this.state = { 
 			pictures: [],
-			selectedPicture: null
+			selectedPicture: null,
+			animal: null
 		};
 	}
 	componentDidMount(){
 		this.giphySearch(encodeURI('cat dog'));
 	}
 	giphySearch(term){
+		console.clear();
+		console.log(term);
 		var xhr = $.get(`http://api.giphy.com/v1/gifs/search?q=${term}&api_key=${API_KEY}&limit=${itemsPerPage}`);
 		xhr.done((data)=>{ 
 			console.log("success got data", data); 
