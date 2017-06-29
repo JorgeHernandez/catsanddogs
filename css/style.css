@@ -5,7 +5,8 @@
 }
  
 body {
-	background: #CCC;
+  	background: #ecf0f1;
+  	color: #8e44ad;
 }
  
 div {
@@ -35,4 +36,18 @@ li img:hover {
 
 .catsAndDogs{
 	background: white;
+}
+
+
+
+
+.center-on-page {
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+}
+
+label{
+	font-size: 18pt;
+	margin: 10px;
 }
