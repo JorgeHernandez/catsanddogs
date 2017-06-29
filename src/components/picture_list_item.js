@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PictureListItem = (props) => {
 	const picture = props.picture;
@@ -6,9 +7,9 @@ const PictureListItem = (props) => {
 	console.log(props.picture);
 	const onPictureSelect = props.onPictureSelect;
 	return (
-		<li onClick={ ()=>onPictureSelect(picture) }>
+		<Link to="/detail" onClick={ ()=>onPictureSelect(picture) }>
 			<img src={imageUrl} />
-		</li>
+		</Link>
 	);
 };
 

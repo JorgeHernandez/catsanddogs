@@ -1,10 +1,10 @@
 import React from 'react';
 
-const PictureDetail = () => {
-
+const PictureDetail = (props) => {
+	const url = props.picture.images.original.url;
 	return (
 		<div>
-			Big doggy here
+			<img src={url} />
 		</div>
 	);
 };

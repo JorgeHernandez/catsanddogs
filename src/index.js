@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import $ from "jquery";
 import _ from 'lodash';
@@ -22,6 +23,8 @@ class App extends Component{
 			selectedPicture: null,
 			animal: null
 		};
+		this.renderHome = this.renderHome.bind(this);
+		this.renderDetail = this.renderDetail.bind(this);
 	}
 	componentDidMount(){
 		this.giphySearch(encodeURI('cat dog'));
@@ -38,17 +41,37 @@ class App extends Component{
 			});
 		});
 	}
-	render(){
+	doSomething(){
+		console.log('adsfdsfasdfasdfasfasfd');
+		//selectedPicture => this.setState({selectedPicture})
+		//link to
+	}
+	renderHome(){
 		const giphySearch = _.debounce((term)=>{this.giphySearch(term)},300);
 
+		return(
+			<div>
+				<AnimalSelector onSearchTermChange={giphySearch} />
+				<PictureList 
+					onPictureSelect={selectedPicture => this.setState({selectedPicture})} 
+					pictures={this.state.pictures} />
+			</div>
+			);
+	}
+	renderDetail(){
+		return(<PictureDetail picture={ this.state.selectedPicture } />);
+	}
+	onPictureSelect(selectedPicture){
+		this.setState({selectedPicture});
+		//enroutar a /detail
+	}
+	render(){
 		return (<div>
 			<h1 className="center-on-page">Cats and a few Dogs</h1>
-			<AnimalSelector onSearchTermChange={giphySearch} />
-			<PictureList 
-				onPictureSelect={selectedPicture => this.setState({selectedPicture})} 
-				pictures={this.state.pictures} />
+		      <Route exact path='/' render={this.renderHome}/>
+		      <Route path='/detail' render={this.renderDetail}/>
 		</div>);
 	}
 }
 
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.querySelector('.container'));
