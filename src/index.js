@@ -42,7 +42,7 @@ class App extends Component{
 		const giphySearch = _.debounce((term)=>{this.giphySearch(term)},300);
 
 		return (<div>
-			<h1>Cats and a few Dogs</h1>
+			<h1 className="center-on-page">Cats and a few Dogs</h1>
 			<AnimalSelector onSearchTermChange={giphySearch} />
 			<PictureList 
 				onPictureSelect={selectedPicture => this.setState({selectedPicture})} 
