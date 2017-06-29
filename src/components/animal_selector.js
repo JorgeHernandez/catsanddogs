@@ -7,9 +7,11 @@ class AnimalSelector extends Component {
 	}
 	render(){
 		return (
-			<div>
-	  			<input type="radio" name="animal" value="cats" onChange={event => this.onInputChange(event.target.value)} /> Cats 
-	  			<input type="radio" name="animal" value="dogs" onChange={event => this.onInputChange(event.target.value)} /> Dogs
+			<div className="center-on-page">
+	  			<input type="radio" name="animal" value="cats" id="cats" checked={this.state.animal === 'cats'} onChange={event => this.onInputChange(event.target.value)} /> 
+	  			<label for="cats">Cats</label>  
+	  			<input type="radio" name="animal" value="dogs" id="dogs" checked={this.state.animal === 'dogs'} onChange={event => this.onInputChange(event.target.value)} /> 
+	  			<label for="dogs">Dogs</label>
 			</div>
 	  );		
 	}
