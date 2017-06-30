@@ -12,7 +12,7 @@ import AnimalSelector from './components/animal_selector';
 
 //key for GIPHY API
 const API_KEY = '34f1b6a7a8f34603a25e6016b4b15b1f';
-//const ROOT_URL = `http://api.giphy.com/v1/gifs/search?q=cat%20dog&api_key=${API_KEY}&limit=25`;
+const ROOT_URL = `http://api.giphy.com/v1/gifs/search?&api_key=${API_KEY}`;
 const itemsPerPage = 25;
 
 class App extends Component{
@@ -21,7 +21,8 @@ class App extends Component{
 		this.state = { 
 			pictures: [],
 			selectedPicture: null,
-			animal: null
+			animal: null,
+			paginate: 0
 		};
 		this.renderHome = this.renderHome.bind(this);
 		this.renderDetail = this.renderDetail.bind(this);
@@ -32,7 +33,8 @@ class App extends Component{
 	giphySearch(term){
 		console.clear();
 		console.log(term);
-		var xhr = $.get(`http://api.giphy.com/v1/gifs/search?q=${term}&api_key=${API_KEY}&limit=${itemsPerPage}`);
+		const url = `${ROOT_URL}&q=${term}&limit=${itemsPerPage}&offset=${this.state.paginate}`;
+		var xhr = $.get(url);
 		xhr.done((data)=>{ 
 			console.log("success got data", data); 
 			this.setState({
@@ -40,11 +42,6 @@ class App extends Component{
 				selectedPicture: data[0]
 			});
 		});
-	}
-	doSomething(){
-		console.log('adsfdsfasdfasdfasfasfd');
-		//selectedPicture => this.setState({selectedPicture})
-		//link to
 	}
 	renderHome(){
 		const giphySearch = _.debounce((term)=>{this.giphySearch(term)},300);
