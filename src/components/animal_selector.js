@@ -9,15 +9,14 @@ class AnimalSelector extends Component {
 		return (
 			<div className="center-on-page">
 	  			<input type="radio" name="animal" value="cats" id="cats" checked={this.state.animal === 'cats'} onChange={event => this.onInputChange(event.target.value)} /> 
-	  			<label for="cats">Cats</label>  
+	  			<label>Cats</label>  
 	  			<input type="radio" name="animal" value="dogs" id="dogs" checked={this.state.animal === 'dogs'} onChange={event => this.onInputChange(event.target.value)} /> 
-	  			<label for="dogs">Dogs</label>
+	  			<label>Dogs</label>
 			</div>
 	  );		
 	}
 	onInputChange(animal){
-		console.clear();
-		console.log(animal);
+		//console.log(animal);
 		this.setState({animal});
 		this.props.onSearchTermChange(animal);
 	}	
