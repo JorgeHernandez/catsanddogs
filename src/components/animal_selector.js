@@ -16,7 +16,6 @@ class AnimalSelector extends Component {
 	  );		
 	}
 	onInputChange(animal){
-		//console.log(animal);
 		this.setState({animal});
 		this.props.onSearchTermChange(animal);
 	}	

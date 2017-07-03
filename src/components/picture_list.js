@@ -18,20 +18,12 @@ const PictureList = ( props ) => {
 				picture={picture} />
 			);
 	});
-	/*
-	return (
-		<ul>
-			{pictureItems}
-		</ul>
-	);
-	*/
 	return (
         <Masonry
-            className={'catsanddogs'} // default ''
-            elementType={'ul'} // default 'div'
-            options={masonryOptions} // default {}
-            disableImagesLoaded={false} // default false
-            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+            elementType={'ul'} 
+            options={masonryOptions} 
+            disableImagesLoaded={false} 
+            updateOnEachImageLoad={false} 
         >
             {pictureItems}
         </Masonry>

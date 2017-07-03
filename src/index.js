@@ -36,12 +36,10 @@ class App extends Component{
 		this.giphySearch(encodeURI('cat dog'));
 	}
 	viewMore(){
-		console.log('view more '+this.state.paginate+' '+this.state.animal);
 		this.setState({paginate: this.state.paginate+itemsPerPage}, 
 			()=>this.giphySearch(this.state.animal));
 	}
 	giphySearch(term){
-		console.log(term);
 		const url = `${ROOT_URL}&q=${term}&limit=${itemsPerPage}&offset=${this.state.paginate}`;
 		if(term !== this.state.animal){
 			this.setState({pictures:{},paginate:0});
@@ -49,7 +47,7 @@ class App extends Component{
 		this.setState({animal: term,loaded:false});
 		var xhr = $.get(url);
 		xhr.done((res)=>{ 
-			//console.log("success got data", data.data); 
+			//console.log("success got data", res.data); 
 			if(this.state.pictures.data){
 				var newPictures = {};
 				newPictures = this.state.pictures;
@@ -85,7 +83,6 @@ class App extends Component{
 	}
 	onPictureSelect(selectedPicture){
 		this.setState({selectedPicture});
-		//enroutar a /detail
 	}
 	render(){
 		return (<div>
