@@ -9,6 +9,7 @@ import PictureList   from './components/picture_list';
 import PictureDetail from './components/picture_detail';
 
 import AnimalSelector from './components/animal_selector';
+import ViewMoreButton from './components/viewMore_btn';
 
 //key for GIPHY API
 const API_KEY = '34f1b6a7a8f34603a25e6016b4b15b1f';
@@ -39,11 +40,11 @@ class App extends Component{
 	}
 	giphySearch(term){
 		console.log(term);
+		const url = `${ROOT_URL}&q=${term}&limit=${itemsPerPage}&offset=${this.state.paginate}`;
 		if(term !== this.state.animal){
 			this.setState({pictures:{},paginate:0});
 		}
 		this.setState({animal: term});
-		const url = `${ROOT_URL}&q=${term}&limit=${itemsPerPage}&offset=${this.state.paginate}`;
 		var xhr = $.get(url);
 		xhr.done((res)=>{ 
 			//console.log("success got data", data.data); 
@@ -67,10 +68,10 @@ class App extends Component{
 		return(
 			<div>
 				<AnimalSelector onSearchTermChange={giphySearch} />
-				<button onClick={this.viewMore}>View more</button>
 				<PictureList 
 					onPictureSelect={selectedPicture => this.setState({selectedPicture})} 
 					pictures={this.state.pictures} />
+				<ViewMoreButton onViewMore={this.viewMore} />
 			</div>
 			);
 	}
