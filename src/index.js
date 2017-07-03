@@ -39,6 +39,9 @@ class App extends Component{
 	}
 	giphySearch(term){
 		console.log(term);
+		if(term !== this.state.animal){
+			this.setState({pictures:{},paginate:0});
+		}
 		this.setState({animal: term});
 		const url = `${ROOT_URL}&q=${term}&limit=${itemsPerPage}&offset=${this.state.paginate}`;
 		var xhr = $.get(url);
