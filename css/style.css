@@ -32,10 +32,6 @@ li img:hover {
 	box-shadow: 0px 0px 7px rgba(255,255,255,0.9);
 }
 
-.catsAndDogs{
-	background: white;
-}
-
 label{
 	font-size: 18pt;
 	margin: 10px;
@@ -45,18 +41,20 @@ label{
 	box-shadow:inset 0px 1px 0px 0px #efdcfb;
 	background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
 	background-color:#dfbdfa;
-	border-radius:6px;
+	border-radius:4px;
 	border:1px solid #c584f3;
-	display:inline-block;
-	cursor:pointer;
+	box-sizing: border-box;
 	color:#fff;
+	cursor:pointer;
+	display:block;
 	font-size:18pt;
 	font-weight:bold;
-	margin: 20px 40px auto;
-	padding:6px 24px;
+	margin: 0 auto;
+	padding:16px;
 	text-align: center;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #9752cc;
+	width: 200px;
 }
 .btnViewMore:hover {
 	background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
@@ -70,20 +68,15 @@ label{
 }
 
 .loader {
-  position: fixed;
-  top: 0;
-  right: 0;
+  background: #fff;
   bottom: 0;
   left: 0;
-  background: white;
+  position: fixed;
+  right: 0;
+  top: 0;
   z-index: 9999;
 }
 
-.loader-wrapper {
-  text-align: center;
-  margin: 25px;
-}
-
-.loaded-contents {
-  margin: 25px;
+.loadedContent {
+  padding: 8px 100px;
 }
