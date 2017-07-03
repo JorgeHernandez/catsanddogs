@@ -33,7 +33,7 @@ class App extends Component{
 		this.viewMore = this.viewMore.bind(this);
 	}
 	componentDidMount(){
-		this.giphySearch(encodeURI('cat dog'));
+		this.giphySearch(encodeURI('cat dog'));//by default, search for both
 	}
 	viewMore(){
 		this.setState({paginate: this.state.paginate+itemsPerPage}, 
