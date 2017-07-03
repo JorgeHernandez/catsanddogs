@@ -1,18 +1,21 @@
+
+
 *{
 	font-family: 'Arial';
   	margin: 0;
   	padding: 0;
 }
- 
+
 body {
   	background: #ecf0f1;
   	color: #8e44ad;
 }
- 
+/*  
 div {
 	margin: 0 auto;
 	overflow: auto;
 }
+*/
  
 ul {
 	list-style-type: none;
@@ -64,4 +67,23 @@ label{
   margin: 10px auto;
   text-align: center;
   width: 50%;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: white;
+  z-index: 9999;
+}
+
+.loader-wrapper {
+  text-align: center;
+  margin: 25px;
+}
+
+.loaded-contents {
+  margin: 25px;
 }

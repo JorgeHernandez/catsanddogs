@@ -5,7 +5,7 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import $ from "jquery";
 import _ from 'lodash';
 
-import ReactLoader from 'react-loader';
+import Loader from 'react-loader';
 
 import PictureList   from './components/picture_list'; 
 import PictureDetail from './components/picture_detail';
@@ -46,7 +46,7 @@ class App extends Component{
 		if(term !== this.state.animal){
 			this.setState({pictures:{},paginate:0});
 		}
-		this.setState({animal: term});
+		this.setState({animal: term,loaded:false});
 		var xhr = $.get(url);
 		xhr.done((res)=>{ 
 			//console.log("success got data", data.data); 
@@ -60,7 +60,8 @@ class App extends Component{
 
 			this.setState({
 				pictures: newPictures,
-				selectedPicture: res[0]
+				selectedPicture: res[0],
+				loaded: true
 			});
 		});
 	}
@@ -70,9 +71,11 @@ class App extends Component{
 		return(
 			<div>
 				<AnimalSelector onSearchTermChange={giphySearch} />
-				<PictureList 
-					onPictureSelect={selectedPicture => this.setState({selectedPicture})} 
-					pictures={this.state.pictures} />
+				<Loader loaded={this.state.loaded} >
+					<PictureList 
+						onPictureSelect={selectedPicture => this.setState({selectedPicture})} 
+						pictures={this.state.pictures} />
+				</Loader>
 				<ViewMoreButton onViewMore={this.viewMore} />
 			</div>
 			);
