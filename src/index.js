@@ -5,6 +5,8 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import $ from "jquery";
 import _ from 'lodash';
 
+import ReactLoader from 'react-loader';
+
 import PictureList   from './components/picture_list'; 
 import PictureDetail from './components/picture_detail';
 
@@ -24,7 +26,7 @@ class App extends Component{
 			selectedPicture: null,
 			animal: null,
 			paginate: 0, 
-			obj: {key1: "value1", key2: "value2"}
+			loaded: false
 		};
 		this.renderHome = this.renderHome.bind(this);
 		this.renderDetail = this.renderDetail.bind(this);
