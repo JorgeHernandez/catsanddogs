@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AnimalSelector changes state animal to cats when cat radio is selected 1`] = `
+<div
+  className="center-on-page"
+>
+  <input
+    checked={false}
+    id="cats"
+    name="animal"
+    onChange={[Function]}
+    type="radio"
+    value="cats"
+  />
+  <label>
+    Cats
+  </label>
+  <input
+    checked={false}
+    id="dogs"
+    name="animal"
+    onChange={[Function]}
+    type="radio"
+    value="dogs"
+  />
+  <label>
+    Dogs
+  </label>
+</div>
+`;
+
+exports[`AnimalSelector changes state animal to cats when cat radio is selected 2`] = `
+<div
+  className="center-on-page"
+>
+  <input
+    checked={false}
+    id="cats"
+    name="animal"
+    onChange={[Function]}
+    type="radio"
+    value="cats"
+  />
+  <label>
+    Cats
+  </label>
+  <input
+    checked={false}
+    id="dogs"
+    name="animal"
+    onChange={[Function]}
+    type="radio"
+    value="dogs"
+  />
+  <label>
+    Dogs
+  </label>
+</div>
+`;
+
+exports[`renders a snapshot 1`] = `
+<div
+  className="center-on-page"
+>
+  <input
+    checked={false}
+    id="cats"
+    name="animal"
+    onChange={[Function]}
+    type="radio"
+    value="cats"
+  />
+  <label>
+    Cats
+  </label>
+  <input
+    checked={false}
+    id="dogs"
+    name="animal"
+    onChange={[Function]}
+    type="radio"
+    value="dogs"
+  />
+  <label>
+    Dogs
+  </label>
+</div>
+`;

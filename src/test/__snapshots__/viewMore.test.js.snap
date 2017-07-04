@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<a
+  className="btn"
+  href="#"
+  id="viewMore-btn"
+  onClick={undefined}
+>
+  View more
+</a>
+`;
