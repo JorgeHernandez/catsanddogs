@@ -13,6 +13,11 @@ it('renders a snapshot', () => {
   	expect(tree).toMatchSnapshot();
 });
 
+it('renders an AnimalSelector component', () => {
+  const component = shallow(<AnimalSelector />);
+  expect(component).toHaveLength(1);
+});
+
 it('initial state animal should be empty', () => {
   const wrapper = shallow(<AnimalSelector onSearchTermChange={()=>{} }/>); 
   expect(wrapper.state().animal).toBe("");
