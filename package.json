@@ -6,7 +6,7 @@
   "repository": "https://github.com/JorgeHernandez/catsanddogs.git",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "jest",
+    "test": "jest --watch --coverage",
     "test:watch": "npm run test -- --watch"
   },
   "author": "",
